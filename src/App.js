@@ -12,7 +12,7 @@ function App() {
     // Function to fetch users from API
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('https://chitwanhumad.pythonanywhere.com/get-users', {
+        const response = await axios.get('/get-users', {
           headers: {
             'Authorization': 'Basic QWFydGkwMTpBYXJ0aTA5Mjc',
           },
