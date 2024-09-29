@@ -8,15 +8,15 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(async() => {
+  useEffect(() => {
     // Function to fetch users from API
-    // const fetchUsers = async () => {
+    const fetchUsers = async () => {
       try {
         const response = await axios.get('/get-users', {
           headers: {
             'Authorization': 'Basic QWFydGkwMTpBYXJ0aTA5Mjc',
           },
-          // timeout: 5000,
+          timeout: 5000,
         });
         setUsers(response.data);
         setLoading(false);
@@ -26,8 +26,8 @@ function App() {
         setError(error);
         setLoading(false);
       }
-    // };
-    // fetchUsers()
+    };
+    fetchUsers()
 
   }, []);
 
@@ -68,7 +68,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(userData).map((key) => (
+            {Object.keys(userData.firstname).map((key) => (
               <tr key={key}>
                 <td>{userData.ActiveStatus[key]}</td>
                 <td>{userData.ReportDate[key]}</td>
@@ -96,7 +96,7 @@ function App() {
               </tr>
             ))}
           </tbody>
-        </table> 
+        </table>
       )}
     </div>
   );
