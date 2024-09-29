@@ -16,7 +16,7 @@ function App() {
           headers: {
             'Authorization': 'Basic QWFydGkwMTpBYXJ0aTA5Mjc',
           },
-          timeout: 5000,
+          // timeout: 5000,
         });
         setUsers(response.data);
         setLoading(false);
@@ -38,7 +38,7 @@ function App() {
     <div className="App">      
       <h1>User Details</h1>
 
-      {/* {userData && (
+      {userData && (
         <table>
           <thead>
             <tr>
@@ -97,7 +97,7 @@ function App() {
             ))}
           </tbody>
         </table> 
-      )}*/}
+      )}
     </div>
   );
 }
