@@ -16,7 +16,7 @@ function App() {
           headers: {
             'Authorization': 'Basic QWFydGkwMTpBYXJ0aTA5Mjc',
           },
-          timeout: 5000,
+          timeout: 50000,
         });
         setUsers(response.data);
         setLoading(false);
