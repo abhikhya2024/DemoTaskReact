@@ -20,7 +20,7 @@ function App() {
         });
         setUsers(response.data);
         setLoading(false);
-        console.log("response",response.data);
+        console.log(response.data);
         console.log(response.data);
       } catch (error) {
         setError(error);
@@ -68,7 +68,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {userData && userData.firstname && Object.keys(userData.firstname).map((key) => (
+            {Object.keys(userData.firstname).map((key) => (
               <tr key={key}>
                 <td>{userData.ActiveStatus[key]}</td>
                 <td>{userData.ReportDate[key]}</td>
