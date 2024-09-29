@@ -8,9 +8,9 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  useEffect(async() => {
     // Function to fetch users from API
-    const fetchUsers = async () => {
+    // const fetchUsers = async () => {
       try {
         const response = await axios.get('/get-users', {
           headers: {
@@ -26,8 +26,8 @@ function App() {
         setError(error);
         setLoading(false);
       }
-    };
-    fetchUsers()
+    // };
+    // fetchUsers()
 
   }, []);
 
