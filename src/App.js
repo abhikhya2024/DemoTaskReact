@@ -38,7 +38,7 @@ function App() {
     <div className="App">      
       <h1>User Details</h1>
 
-      {userData && (
+      {/* {userData && (
         <table>
           <thead>
             <tr>
@@ -96,8 +96,8 @@ function App() {
               </tr>
             ))}
           </tbody>
-        </table>
-      )}
+        </table> 
+      )}*/}
     </div>
   );
 }
