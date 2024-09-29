@@ -1,5 +1,4 @@
 {
-  "proxy": "https://chitwanhumad.pythonanywhere.com",
   "name": "react-api-display",
   "version": "0.1.0",
   "private": true,
