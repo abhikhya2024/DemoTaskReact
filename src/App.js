@@ -68,7 +68,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(userData.firstname).map((key) => (
+            {Object.keys(userData).map((key) => (
               <tr key={key}>
                 <td>{userData.ActiveStatus[key]}</td>
                 <td>{userData.ReportDate[key]}</td>
