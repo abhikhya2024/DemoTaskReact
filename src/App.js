@@ -16,8 +16,9 @@ function App() {
   // }, []);
 
   const fetchUsers = async () => {
+    console.log("fetching users")
     try {
-      const response = await axios.get('/get-users', {
+      const response = await axios.get('https://chitwanhumad.pythonanywhere.com/get-users', {
         headers: {
           'Authorization': 'Basic QWFydGkwMTpBYXJ0aTA5Mjc',
         },
@@ -40,7 +41,7 @@ function App() {
   return (
     <div className="App">      
       <h1>User Details</h1>
-      <button onClick={fetchUsers}>Fetch Users</button>
+      <button onClick={(e)=>fetchUsers(e)}>Fetch Users</button>
 
       {userData && userData.firstname && (
         <table>
