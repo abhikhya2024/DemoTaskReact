@@ -21,6 +21,9 @@ function App() {
       const response = await axios.get('https://chitwanhumad.pythonanywhere.com/get-users', {
         headers: {
           'Authorization': 'Basic QWFydGkwMTpBYXJ0aTA5Mjc',
+          'Content-Type': 'application/json', // Optional, based on API requirements
+          'Access-Control-Allow-Origin': '*', // You can add this, but it must be supported by the server
+  
         },
         timeout: 50000,
       });
