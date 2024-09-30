@@ -8,38 +8,41 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // Function to fetch users from API
-    const fetchUsers = async () => {
-      try {
-        const response = await axios.get('/get-users', {
-          headers: {
-            'Authorization': 'Basic QWFydGkwMTpBYXJ0aTA5Mjc',
-          },
-          timeout: 50000,
-        });
-        setUsers(response.data);
-        setLoading(false);
-        console.log(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error('Error fetching data: ', error);
-        setError(error);
-        setLoading(false);
-      }
-    };
-    fetchUsers()
+  // useEffect(() => {
+  //   // Function to fetch users from API
+    
+  //   // fetchUsers()
 
-  }, []);
+  // }, []);
 
-  if (loading) return <div>Loading...</div>;
+  const fetchUsers = async () => {
+    try {
+      const response = await axios.get('/get-users', {
+        headers: {
+          'Authorization': 'Basic QWFydGkwMTpBYXJ0aTA5Mjc',
+        },
+        timeout: 50000,
+      });
+      setUsers(response.data);
+      setLoading(false);
+      console.log(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error fetching data: ', error);
+      setError(error);
+      setLoading(false);
+    }
+  };
+
+  // if (loading) return <div>Loading...</div>;
   if (error) return <div>Error fetching data: {error.message}</div>;
 
   return (
     <div className="App">      
       <h1>User Details</h1>
+      <button onClick={fetchUsers}>Fetch Users</button>
 
-      {userData && (
+      {userData && userData.firstname && (
         <table>
           <thead>
             <tr>
